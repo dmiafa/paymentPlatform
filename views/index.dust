@@ -1,0 +1,33 @@
+{>layout/}
+{<content}
+  <table>
+    <thead>
+      <td>Ticket</td>
+      <td>Description</td>
+      <td>Price</td>
+      <td>Quantity </td>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Type 1</td>
+        <td>Ticket includes blah blah blah </td>
+        <td>$<span class="ticketPrice">60.00</span></td>
+        <td><input class="ticketQuantity" value="1"></td>
+      </tr>
+      <tr>
+        <td>Type 2</td>
+        <td>Ticket includes blah blah blah </td>
+        <td>$<span class="ticketPrice">70.00</span></td>
+        <td><input class="ticketQuantity" value="0"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>Total: $<span id="totalPrice"></span></div>
+
+
+  <form action="" method="POST">
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_4O3fcXSDBOeySYSzesdjqvfr" data-amount="1000" data-name="Demo Site" data-description="2 Tickets ($10.00)"> 
+  </script>
+  </form>
+{/content}

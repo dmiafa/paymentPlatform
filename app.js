@@ -10,9 +10,16 @@ var users = require('./routes/users');
 
 var app = express();
 
+
+var dust = require('dustjs-linkedin');
+var cons = require('consolidate');
+
+app.engine('dust', cons.dust);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'dust');
+app.set('template_engine', 'dust')
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -20,6 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', routes);
 app.use('/users', users);

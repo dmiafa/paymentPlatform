@@ -3,3 +3,31 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  //Wrapper
+  #wrapper
+    // USER LIST
+    h2 Buy Tickets
+      #ticketList
+        table
+          thead
+            th Type
+            th Desc
+            th Price
+            th Quantity
+          tbody
+            row
+              th Type 1
+              th Desc 1
+              th 60
+              input(type="number")
+    // /USER LIST
+    form(action="" method="POST")
+      script(src="https://checkout.stripe.com/checkout.js"
+      class="stripe-button"
+      data-key="pk_test_4O3fcXSDBOeySYSzesdjqvfr"
+      data-amount="1000"
+      data-name="Demo Site"
+      data-description="2 Tickets ($10.00)")
+
+  // /WRAPPER
