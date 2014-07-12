@@ -53,12 +53,14 @@ $(document).ready(function() {
   $('#stripeCheckout').click(function() {
     var token = function(res) {
       var $input = $('<input type=hidden name=stripeToken />').val(res.id);
-      $('#paySubmit').append($input).submit();
+      var $quantity = $('<input type=hidden name=numTicketsBought />').val(calculateQuantity());
+      var $priceInDollars = $('<input type=hidden name=priceInDollars />').val(calculatePriceInDollars());
+      $('#paySubmit').append($input).append($quantity).append($priceInDollars).submit();
     };
     var totalPriceInDollars = calculatePriceInDollars();
     var totalQuantity = calculateQuantity();
     StripeCheckout.open({
-      key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+      key: 'pk_test_4O3fcXSDBOeySYSzesdjqvfr',
       amount: totalPriceInDollars*100,
       currency: 'usd',
       name: 'NYC Loft Parties',

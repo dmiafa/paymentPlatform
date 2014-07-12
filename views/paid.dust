@@ -1,4 +1,4 @@
 {>layout/}
 {<content}
-  <div> Thanks for paying {firstName} {lastName}! </div>
+  <div> Thanks for paying ${price} for {quantity} tickets, {firstName} {lastName}! </div>
 {/content}
