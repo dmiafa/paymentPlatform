@@ -6,6 +6,8 @@ var stripe = require("stripe")("sk_test_4O3fNOkRCHRclCFelo0yBvYE");
 /* POST home page */
 router.post('/', function(req, res) {
   var stripeToken = req.body.stripeToken;
+  var firstName = req.body.firstName;
+  var lastName = req.body.lastName
 
   var charge = stripe.charges.create({
     amount: 1000, // amount in cents, again
@@ -17,7 +19,7 @@ router.post('/', function(req, res) {
       // The card has been declined
     }
   });
-  res.render('paid', {});
+  res.render('paid', {firstName:firstName, lastName:lastName});
 });
 
 /* GET home page. */

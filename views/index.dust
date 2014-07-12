@@ -24,21 +24,22 @@
   </table>
 
   <div>Total: $<span id="totalPrice"></span></div>
-  <form action="" action="POST">
+  <form action="" method="POST" id="paySubmit">
   <table>
     <thead>
       <td>First name</td>
       <td>Last name</td>
     </thead>
     <tbody>
-      <td><input type="text"></td>
-      <td> <input type="text"> </td>
+      <td><input type="text" name="firstName"></td>
+      <td><input type="text" name="lastName"></td>
     </tbody>
   </table>
-  </form>
 
   <button id="stripeCheckout">Pay with Card
   </button>
+  </form>
   <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script src="/javascripts/index.js"></script>
 
 {/content}
