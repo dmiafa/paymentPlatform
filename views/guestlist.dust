@@ -1,0 +1,23 @@
+{>layout/}
+{<content}
+<form action="/guestlist" method="POST" id="submitUpdate">
+  <table>
+    <thead>
+      <td>Name</td>
+      <td>Number of Tickets</td>
+      <td>Comments</td>
+    </thead>
+    <tbody>
+      {#guests}
+      <tr class="guestRow" id="{_id}">
+        <td>{firstName} {lastName}</td>
+        <td>{tickets}</td>
+        <td><input type="text" name="{_id}" value="{comments}"></td>
+      </tr>
+      {/guests}
+    </tbody>
+  </table>
+  <button id="updateButton">Update</button>
+</form>
+<script src="/javascripts/guestlist.js"></script>
+{/content}
