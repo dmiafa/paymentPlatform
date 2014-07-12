@@ -24,10 +24,21 @@
   </table>
 
   <div>Total: $<span id="totalPrice"></span></div>
-
-
-  <form action="" method="POST">
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_4O3fcXSDBOeySYSzesdjqvfr" data-amount="1000" data-name="Demo Site" data-description="2 Tickets ($10.00)"> 
-  </script>
+  <form action="" action="POST">
+  <table>
+    <thead>
+      <td>First name</td>
+      <td>Last name</td>
+    </thead>
+    <tbody>
+      <td><input type="text"></td>
+      <td> <input type="text"> </td>
+    </tbody>
+  </table>
   </form>
+
+  <button id="stripeCheckout">Pay with Card
+  </button>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+
 {/content}
